@@ -29,6 +29,6 @@ DENTRIX uses a number of open source projects to work properly:
 - [Crystal Reports](https://www.crystalreports.com) -  a reporting application that can generate reports from various Data Sources.
 - [AForge](http://www.aforgenet.com/framework/) -  is a core library of AForge.NET framework, which contains core classes used by other libraries of the framework and classes, which can be used independently for various purposes.
 - [GunaUI Framework](https://gunaui.com) - is the suite for creating groundbreaking desktop app UI. It is for developers targeting the .NET Windows Forms platform.
-- [Visual Basic .NET] - is a multi-paradigm, object-oriented programming language, implemented on .NET, Mono, and the .NET Framework.
+- [Visual Basic .NET](https://visualstudio.microsoft.com/vs/features/net-development/) - is a multi-paradigm, object-oriented programming language, implemented on .NET, Mono, and the .NET Framework.
 - [MySql](https://www.mysql.com) - is an Oracle-backed open source relational database management system (RDBMS) based on Structured Query Language (SQL).
 
