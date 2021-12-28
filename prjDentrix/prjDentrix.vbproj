@@ -1,0 +1,746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43D03D48-4A9E-4FEA-8101-6D4CFEC906EA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>prjDentrix.My.MyApplication</StartupObject>
+    <RootNamespace>prjDentrix</RootNamespace>
+    <AssemblyName>prjDentrix</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>prjDentrix.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>prjDentrix.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>dentrix_logo_new.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\IT13L_CSE10l Softwares\mysql 4.0\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net45\FontAwesome.Sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\frameworks\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mysql 4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mysql 4.0\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Fabric.Plugin">
+      <HintPath>..\..\..\IT13L_CSE10l Softwares\mysql 4.0\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\frmAdminScreen.Designer.vb">
+      <DependentUpon>frmAdminScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmAdminScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\Manage Users\frm_admin_edituser.Designer.vb">
+      <DependentUpon>frm_admin_edituser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\Manage Users\frm_admin_edituser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\Manage Users\UserControl_admin_addadmin.Designer.vb">
+      <DependentUpon>UserControl_admin_addadmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\Manage Users\UserControl_admin_addadmin.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\Manage Users\UserControl_manageuser_list.Designer.vb">
+      <DependentUpon>UserControl_manageuser_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\Manage Users\UserControl_manageuser_list.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\UserControl_admin_dashboard.Designer.vb">
+      <DependentUpon>UserControl_admin_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\UserControl_admin_dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\UserControl_admin_manage_users.Designer.vb">
+      <DependentUpon>UserControl_admin_manage_users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\UserControl_admin_manage_users.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\UserControls\UserControl_backup.Designer.vb">
+      <DependentUpon>UserControl_backup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserControls\UserControl_backup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Connection.vb" />
+    <Compile Include="Dentist\CrystalReportForms\frmPrescriptionReceipt.Designer.vb">
+      <DependentUpon>frmPrescriptionReceipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrescriptionReceipt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintInventory.Designer.vb">
+      <DependentUpon>frmPrintInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintPatient.Designer.vb">
+      <DependentUpon>frmPrintPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintPatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintTransaction_Item.Designer.vb">
+      <DependentUpon>frmPrintTransaction_Item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintTransaction_Item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintTransaction_Service.Designer.vb">
+      <DependentUpon>frmPrintTransaction_Service.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintTransaction_Service.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\rptPrescriptionReceipt.vb">
+      <DependentUpon>rptPrescriptionReceipt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintAppointment.Designer.vb">
+      <DependentUpon>frmPrintAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintPrescription.Designer.vb">
+      <DependentUpon>frmPrintPrescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\frmPrintPrescription.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\rptPrintAppointment.vb">
+      <DependentUpon>rptPrintAppointment.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\rptPrintInventory.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrintInventory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\rptPrintPatient.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrintPatient.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\rptPrintPrescription.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrintPrescription.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\rptPrintTransaction_Item.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrintTransaction_Item.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dentist\CrystalReportForms\rptPrintTransaction_Service.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPrintTransaction_Service.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dentist\frmDentistScreen.Designer.vb">
+      <DependentUpon>frmDentistScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\frmDentistScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\appointment\frm_edit_appointment.Designer.vb">
+      <DependentUpon>frm_edit_appointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\appointment\frm_edit_appointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\appointment\frm_view_appointment.Designer.vb">
+      <DependentUpon>frm_view_appointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\appointment\frm_view_appointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\appointment\UserControl_appointment_addappointment.Designer.vb">
+      <DependentUpon>UserControl_appointment_addappointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\appointment\UserControl_appointment_addappointment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\appointment\UserControl_appointment_appointmentlist.Designer.vb">
+      <DependentUpon>UserControl_appointment_appointmentlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\appointment\UserControl_appointment_appointmentlist.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\inventory\frm_edit_inventory.Designer.vb">
+      <DependentUpon>frm_edit_inventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\inventory\frm_edit_inventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\inventory\frm_view_inventory.Designer.vb">
+      <DependentUpon>frm_view_inventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\inventory\frm_view_inventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\inventory\UserControl_inventory_addinventory.Designer.vb">
+      <DependentUpon>UserControl_inventory_addinventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\inventory\UserControl_inventory_addinventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\inventory\UserControl_inventory_inventorylist.Designer.vb">
+      <DependentUpon>UserControl_inventory_inventorylist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\inventory\UserControl_inventory_inventorylist.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\patient\frm_edit_patient.Designer.vb">
+      <DependentUpon>frm_edit_patient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\patient\frm_edit_patient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\patient\frm_view_patient.Designer.vb">
+      <DependentUpon>frm_view_patient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\patient\frm_view_patient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\patient\UserControl_patient_addpatient.Designer.vb">
+      <DependentUpon>UserControl_patient_addpatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\patient\UserControl_patient_addpatient.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\patient\UserControl_patient_patientlist.Designer.vb">
+      <DependentUpon>UserControl_patient_patientlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\patient\UserControl_patient_patientlist.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\prescription\frm_edit_prescription.Designer.vb">
+      <DependentUpon>frm_edit_prescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\prescription\frm_edit_prescription.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\prescription\UserControl_prescription_addprescription.Designer.vb">
+      <DependentUpon>UserControl_prescription_addprescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\prescription\UserControl_prescription_addprescription.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\prescription\UserControl_prescription_prescriptionlist.Designer.vb">
+      <DependentUpon>UserControl_prescription_prescriptionlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\prescription\UserControl_prescription_prescriptionlist.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\services\frm_edit_service.Designer.vb">
+      <DependentUpon>frm_edit_service.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\services\frm_edit_service.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\services\frm_view_service.Designer.vb">
+      <DependentUpon>frm_view_service.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\services\frm_view_service.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\services\UserControl_services_addservice.Designer.vb">
+      <DependentUpon>UserControl_services_addservice.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\services\UserControl_services_addservice.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\services\UserControl_services_servicelist.Designer.vb">
+      <DependentUpon>UserControl_services_servicelist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\services\UserControl_services_servicelist.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\frm_browse_item.Designer.vb">
+      <DependentUpon>frm_browse_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\frm_browse_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\frm_browse_patient.Designer.vb">
+      <DependentUpon>frm_browse_patient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\frm_browse_patient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\frm_browse_service_type.Designer.vb">
+      <DependentUpon>frm_browse_service_type.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\frm_browse_service_type.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\UserControl_transaction_balance.Designer.vb">
+      <DependentUpon>UserControl_transaction_balance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\UserControl_transaction_balance.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\UserControl_transaction_item.Designer.vb">
+      <DependentUpon>UserControl_transaction_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\UserControl_transaction_item.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\UserControl_transaction_service.Designer.vb">
+      <DependentUpon>UserControl_transaction_service.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\UserControl_transaction_service.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\UserControl_transaction_transactionlist.Designer.vb">
+      <DependentUpon>UserControl_transaction_transactionlist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\transaction\UserControl_transaction_transactionlist.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_appointment.Designer.vb">
+      <DependentUpon>UserControl_appointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_appointment.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_dashboard.Designer.vb">
+      <DependentUpon>UserControl_dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_dashboard.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_dentist_profile.Designer.vb">
+      <DependentUpon>UserControl_dentist_profile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_dentist_profile.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_home.Designer.vb">
+      <DependentUpon>UserControl_home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_home.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_inventory.Designer.vb">
+      <DependentUpon>UserControl_inventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_inventory.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_Patient.Designer.vb">
+      <DependentUpon>UserControl_Patient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_Patient.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_prescription.Designer.vb">
+      <DependentUpon>UserControl_prescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_prescription.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_services.Designer.vb">
+      <DependentUpon>UserControl_services.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_services.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_transaction.Designer.vb">
+      <DependentUpon>UserControl_transaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dentist\UserControls\UserControl_transaction.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dentist\UserModel.vb" />
+    <Compile Include="dsDentrix.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDentrix.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmCaptureImage.Designer.vb">
+      <DependentUpon>frmCaptureImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCaptureImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDentrixSplash.Designer.vb">
+      <DependentUpon>frmDentrixSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDentrixSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegisterDentist.Designer.vb">
+      <DependentUpon>frmRegisterDentist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisterDentist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PublicFunctions.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin\frmAdminScreen.resx">
+      <DependentUpon>frmAdminScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControls\Manage Users\frm_admin_edituser.resx">
+      <DependentUpon>frm_admin_edituser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControls\Manage Users\UserControl_admin_addadmin.resx">
+      <DependentUpon>UserControl_admin_addadmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControls\Manage Users\UserControl_manageuser_list.resx">
+      <DependentUpon>UserControl_manageuser_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControls\UserControl_admin_dashboard.resx">
+      <DependentUpon>UserControl_admin_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControls\UserControl_admin_manage_users.resx">
+      <DependentUpon>UserControl_admin_manage_users.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserControls\UserControl_backup.resx">
+      <DependentUpon>UserControl_backup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\frmPrescriptionReceipt.resx">
+      <DependentUpon>frmPrescriptionReceipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\frmPrintInventory.resx">
+      <DependentUpon>frmPrintInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\frmPrintPatient.resx">
+      <DependentUpon>frmPrintPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\frmPrintTransaction_Item.resx">
+      <DependentUpon>frmPrintTransaction_Item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\frmPrintTransaction_Service.resx">
+      <DependentUpon>frmPrintTransaction_Service.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\rptPrescriptionReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrescriptionReceipt.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\frmPrintAppointment.resx">
+      <DependentUpon>frmPrintAppointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\frmPrintPrescription.resx">
+      <DependentUpon>frmPrintPrescription.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\rptPrintAppointment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintAppointment.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\rptPrintInventory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintInventory.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\rptPrintPatient.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintPatient.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\rptPrintPrescription.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintPrescription.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\rptPrintTransaction_Item.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintTransaction_Item.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\CrystalReportForms\rptPrintTransaction_Service.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPrintTransaction_Service.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\frmDentistScreen.resx">
+      <DependentUpon>frmDentistScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\appointment\frm_edit_appointment.resx">
+      <DependentUpon>frm_edit_appointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\appointment\frm_view_appointment.resx">
+      <DependentUpon>frm_view_appointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\appointment\UserControl_appointment_addappointment.resx">
+      <DependentUpon>UserControl_appointment_addappointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\appointment\UserControl_appointment_appointmentlist.resx">
+      <DependentUpon>UserControl_appointment_appointmentlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\inventory\frm_edit_inventory.resx">
+      <DependentUpon>frm_edit_inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\inventory\frm_view_inventory.resx">
+      <DependentUpon>frm_view_inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\inventory\UserControl_inventory_addinventory.resx">
+      <DependentUpon>UserControl_inventory_addinventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\inventory\UserControl_inventory_inventorylist.resx">
+      <DependentUpon>UserControl_inventory_inventorylist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\patient\frm_edit_patient.resx">
+      <DependentUpon>frm_edit_patient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\patient\frm_view_patient.resx">
+      <DependentUpon>frm_view_patient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\patient\UserControl_patient_addpatient.resx">
+      <DependentUpon>UserControl_patient_addpatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\patient\UserControl_patient_patientlist.resx">
+      <DependentUpon>UserControl_patient_patientlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\prescription\frm_edit_prescription.resx">
+      <DependentUpon>frm_edit_prescription.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\prescription\UserControl_prescription_addprescription.resx">
+      <DependentUpon>UserControl_prescription_addprescription.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\prescription\UserControl_prescription_prescriptionlist.resx">
+      <DependentUpon>UserControl_prescription_prescriptionlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\services\frm_edit_service.resx">
+      <DependentUpon>frm_edit_service.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\services\frm_view_service.resx">
+      <DependentUpon>frm_view_service.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\services\UserControl_services_addservice.resx">
+      <DependentUpon>UserControl_services_addservice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\services\UserControl_services_servicelist.resx">
+      <DependentUpon>UserControl_services_servicelist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\transaction\frm_browse_item.resx">
+      <DependentUpon>frm_browse_item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\transaction\frm_browse_patient.resx">
+      <DependentUpon>frm_browse_patient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\transaction\frm_browse_service_type.resx">
+      <DependentUpon>frm_browse_service_type.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\transaction\UserControl_transaction_balance.resx">
+      <DependentUpon>UserControl_transaction_balance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\transaction\UserControl_transaction_item.resx">
+      <DependentUpon>UserControl_transaction_item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\transaction\UserControl_transaction_service.resx">
+      <DependentUpon>UserControl_transaction_service.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\transaction\UserControl_transaction_transactionlist.resx">
+      <DependentUpon>UserControl_transaction_transactionlist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_appointment.resx">
+      <DependentUpon>UserControl_appointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_dashboard.resx">
+      <DependentUpon>UserControl_dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_dentist_profile.resx">
+      <DependentUpon>UserControl_dentist_profile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_home.resx">
+      <DependentUpon>UserControl_home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_inventory.resx">
+      <DependentUpon>UserControl_inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_Patient.resx">
+      <DependentUpon>UserControl_Patient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_prescription.resx">
+      <DependentUpon>UserControl_prescription.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_services.resx">
+      <DependentUpon>UserControl_services.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dentist\UserControls\UserControl_transaction.resx">
+      <DependentUpon>UserControl_transaction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCaptureImage.resx">
+      <DependentUpon>frmCaptureImage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDentrixSplash.resx">
+      <DependentUpon>frmDentrixSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegisterDentist.resx">
+      <DependentUpon>frmRegisterDentist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dsDentrix.xsc">
+      <DependentUpon>dsDentrix.xsd</DependentUpon>
+    </None>
+    <None Include="dsDentrix.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDentrix.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsDentrix.xss">
+      <DependentUpon>dsDentrix.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dentrix_logo_new.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
