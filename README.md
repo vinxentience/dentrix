@@ -7,8 +7,7 @@
 
 
 DENTRIX is a computer-based dental management system that aims to digitally assist the employees of orthodontic clinics with any establishment transactions including
-managing appointments, managing reports, managing inventory, and managing
-prescriptions.
+managing appointments, managing reports, managing inventory, and managing prescriptions.
 
 >This project was proposed to assist the employees and patients of orthodontic clinics, in order to have an organized, responsive, and
 technologically improved facility. By utilizing DENTRIX, employees will invest
